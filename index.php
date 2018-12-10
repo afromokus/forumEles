@@ -7,7 +7,7 @@ and open the template in the editor.
 <html>
     <head>
         <meta charset="UTF-8">
-        <title></title>
+        <title>3D Labirintus</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
         <link rel="stylesheet" href="3DLabCasc.css"/>
@@ -25,7 +25,9 @@ and open the template in the editor.
             <div id="urlapTarolo" class="jumbotron">
                 <form class="urlap">
                     <div id="formElemek" class="beljebbKezdes">
-                        <input class="kitoltendoMezo" type='text' placeholder="felhasználói név">
+                        <input class="kitoltendoMezo" type='text' placeholder="Felhasználói név">
+                        <br>
+                        <input id="jelszo" class="kitoltendoMezo" type="password" placeholder="Jelszó">
                     </div>
                 </form>
             </div>
