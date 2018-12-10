@@ -1,7 +1,43 @@
+html
+{
+    height: 100%;
+}
+
+body
+{
+    height: 100%;
+}
+
+body.jumbotron
+{
+    margin: 0;
+    padding: 0;
+}
+
+.page-header
+{
+    margin: 0;
+    padding: 0;
+}
+
 .felkoverSerif
 {
     font-family: sans-serif;
     font-weight: bold;
+}
+
+h1
+{
+    margin: 0;
+    padding: 0;
+}
+
+.jumbotron .page-header
+{
+    padding: 2%;
+    padding-top: 3%;
+    min-height: 120px;
+   background-color: rgb(125,127,148);     
 }
 
 .kitoltendoMezo
@@ -12,12 +48,6 @@
 .beljebbKezdes
 {
     margin-left: 2%;
-}
-
-.page-header
-{
-    padding: 0;
-    margin: 0;
 }
 
 .urlap
@@ -55,6 +85,18 @@
     .page-header
     {
     border-color: rgb(125,127,148);
+    }
+    
+    .jumbotron .page-header
+    {
+        padding-top: 120px;
+        padding-bottom: 4px;        
+        min-height: 80px;  
+    }
+    
+    .urlapTarolo
+    {
+        margin: 2px;        
     }
 }
 

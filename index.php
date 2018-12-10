@@ -4,7 +4,7 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
-<html class="jumbotron">
+<html>
     <head>
         <meta charset="UTF-8">
         <title></title>
@@ -13,9 +13,9 @@ and open the template in the editor.
         <link rel="stylesheet" href="3DLabCasc.css"/>
         
     </head>
-    <body>
+    <body class="jumbotron">
         <div class ='kozepre'>
-            <div class="page-header jumbotron">
+            <div class="page-header">
                     <h1 class="beljebbKezdes">
                         <font class="felkoverSerif">
                         Bejelentkezés
