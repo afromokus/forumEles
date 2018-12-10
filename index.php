@@ -22,11 +22,13 @@ and open the template in the editor.
                         </font>
                     </h1>
             </div>
-            <form class="jumbotron urlap">
-                <div id="formElemek" class="beljebbKezdes">
-                    <input class="kitoltendoMezo" type='text' placeholder="felhasználói név">
-                </div>
-            </form>
+            <div id="urlapTarolo" class="jumbotron">
+                <form class="urlap">
+                    <div id="formElemek" class="beljebbKezdes">
+                        <input class="kitoltendoMezo" type='text' placeholder="felhasználói név">
+                    </div>
+                </form>
+            </div>
         </div>
         <?php
         
