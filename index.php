@@ -29,6 +29,9 @@ and open the template in the editor.
                         <input class="kitoltendoMezo" type='text' placeholder="Felhasználói név">
                         <br>
                         <input id="jelszo" class="kitoltendoMezo" type="password" placeholder="Jelszó">
+                        <br>
+                            <input type="submit" class="btn btn-sm btn-primary" value="Mehet"
+                                   disabled="disabled">
                     </div>
                 </form>
             </div>
