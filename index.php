@@ -29,7 +29,7 @@ and open the template in the editor.
                         <input name="felhNev" id="felhNevMezo" class="kitoltendoMezo" type='text' placeholder="Felhasználói név" onkeyup="ellenorzes()">
                         <span id="hibaFelh" class="hibaVisszaJelzes">                            
                         </span>
-                        <a id="regGomb" href="regisztracio.php">
+                        <a id="regGomb" href="regisztracio.php" tabindex="4">
                             Regisztráció
                         </a>
                         <br>
