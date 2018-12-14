@@ -26,11 +26,15 @@ and open the template in the editor.
             <div id="urlapTarolo" class="jumbotron">
                 <form class="urlap">
                     <div id="formElemek" class="beljebbKezdes">
-                        <input class="kitoltendoMezo" type='text' placeholder="Felhasználói név">
+                        <input id="felhNevMezo" class="kitoltendoMezo" type='text' placeholder="Felhasználói név" onkeyup="ellenorzes()">
+                        <span id="hibaFelh" class="hibaVisszaJelzes">                            
+                        </span>
                         <br>
-                        <input id="jelszo" class="kitoltendoMezo" type="password" placeholder="Jelszó">
+                        <input id="jelszo" class="kitoltendoMezo" type="password" placeholder="Jelszó" onkeyup="ellenorzes()">
+                        <span id="hibaJelszo" class="hibaVisszaJelzes">                            
+                        </span>
                         <br>
-                            <input type="submit" class="btn btn-sm btn-primary" value="Mehet"
+                        <input id="gombMehet" type="submit" class="btn btn-sm btn-primary" value="Mehet"
                                    disabled="disabled">
                     </div>
                 </form>
@@ -40,6 +44,46 @@ and open the template in the editor.
         require_once 'csatlakozas.php';
         ?>
         <script>
+            function felhNevEllenorzes()
+            {
+                if($('#felhNevMezo').val().length < 5)
+                {
+                    document.getElementById('hibaFelh').innerHTML = "Felhasználónév hossza nem megfelelő!";
+                    return false;
+                }
+                else
+                {
+                    document.getElementById('hibaFelh').innerHTML = "";
+                    return true;
+                }  
+            }
+            
+            function jelszoEllenorzes()
+            {
+                if($('#jelszo').val().length < 7)
+                {
+                    document.getElementById('hibaJelszo').innerHTML = "A jelszó nem megfelelő hosszúságú!";
+                    return false;
+                }
+                else
+                {
+                    document.getElementById('hibaJelszo').innerHTML = "";
+                    return true;
+                }
+            }            
+            
+            
+            function ellenorzes()
+            {
+                if(felhNevEllenorzes() && jelszoEllenorzes())
+                {
+                    $(':input[type="submit"]').prop('disabled', false);
+                }
+                else
+                {
+                    $(':input[type="submit"]').prop('disabled', true);
+                }
+            }
             
         </script>
     </body>
