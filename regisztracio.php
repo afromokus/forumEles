@@ -19,21 +19,26 @@ and open the template in the editor.
             <div class="page-header">
                     <h1 class="beljebbKezdes">
                         <font class="felkoverSerif">
-                        Bejelentkezés
+                        Regisztráció
                         </font>
                     </h1>
             </div>
             <div id="urlapTarolo" class="jumbotron">
-                <form class="urlap" action="belepes.php" method="POST">
+                <form class="urlap" action="sikeresregisztracio.php" method="POST">
                     <div id="formElemek" class="beljebbKezdes">
                         <input name="felhNev" id="felhNevMezo" class="kitoltendoMezo" type='text' placeholder="Felhasználói név" onkeyup="ellenorzes()">
                         <span id="hibaFelh" class="hibaVisszaJelzes">                            
                         </span>
-                        <a id="regGomb" href="regisztracio.php">
-                            Regisztráció
-                        </a>
+                        <br>
+                        <input name="email" id="felhNevMezo" class="kitoltendoMezo" type='text' placeholder="E-mail cím" onkeyup="ellenorzes()">
+                        <span id="hibaFelh" class="hibaVisszaJelzes">                            
+                        </span>
                         <br>
                         <input name="jelszo" id="jelszo" class="kitoltendoMezo" type="password" placeholder="Jelszó" onkeyup="ellenorzes()">
+                        <span id="hibaJelszo" class="hibaVisszaJelzes">                            
+                        </span>
+                        <br>
+                        <input name="jelszoMeger" id="jelszo" class="kitoltendoMezo" type="password" placeholder="Jelszó megerősítése" onkeyup="ellenorzes()">
                         <span id="hibaJelszo" class="hibaVisszaJelzes">                            
                         </span>
                         <br>

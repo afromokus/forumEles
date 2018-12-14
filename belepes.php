@@ -19,6 +19,7 @@
         if(!$sikeresBelepes)
             {
             echo 'Érvénytelen felhasználónév, vagy jelszó!';
+            echo '<br><a href="index.php">Vissza</a>';
             }
         
         ?>

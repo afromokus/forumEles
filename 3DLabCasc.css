@@ -78,6 +78,13 @@ h1
     min-width: 60px;
 }
 
+#regGomb
+{
+    padding-left: 30%; 
+    font-size: 250%;
+    text-decoration: underline;
+}
+
 @media (max-width: 1080px)
 { 
     .jumbotron
