@@ -26,20 +26,22 @@ and open the template in the editor.
             <div id="urlapTarolo" class="jumbotron">
                 <form class="urlap" action="sikeresregisztracio.php" method="POST">
                     <div id="formElemek" class="beljebbKezdes">
-                        <input name="felhNev" id="felhNevMezo" class="kitoltendoMezo" type='text' placeholder="Felhasználói név" onkeyup="ellenorzes()">
+                        <input name="felhNev" id="felhNevMezo" class="kitoltendoMezo" type='text' placeholder="Felhasználói név" onkeyup="ellenorzes()"
+                               required="required">
                         <span id="hibaFelh" class="hibaVisszaJelzes">                            
                         </span>
                         <br>
-                        <input name="email" id="felhNevMezo" class="kitoltendoMezo" type='text' placeholder="E-mail cím" onkeyup="ellenorzes()">
-                        <span id="hibaFelh" class="hibaVisszaJelzes">                            
+                        <input name="email" id="emailMezo" class="kitoltendoMezo" type='text' placeholder="E-mail cím" onkeyup="ellenorzes()">
+                        <span id="hibaEmail" class="hibaVisszaJelzes" required="required">                            
                         </span>
                         <br>
                         <input name="jelszo" id="jelszo" class="kitoltendoMezo" type="password" placeholder="Jelszó" onkeyup="ellenorzes()">
-                        <span id="hibaJelszo" class="hibaVisszaJelzes">                            
+                        <span id="hibaJelszo" class="hibaVisszaJelzes" required="required">                            
                         </span>
                         <br>
-                        <input name="jelszoMeger" id="jelszo" class="kitoltendoMezo" type="password" placeholder="Jelszó megerősítése" onkeyup="ellenorzes()">
-                        <span id="hibaJelszo" class="hibaVisszaJelzes">                            
+                        <input name="jelszoMeger" id="jelszoMegerMez" class="kitoltendoMezo" type="password" placeholder="Jelszó megerősítése" 
+                               onkeyup="ellenorzes()" required="required">
+                        <span id="hibaJelszoMeger" class="hibaVisszaJelzes">                            
                         </span>
                         <br>
                         <input id="gombMehet" type="submit" class="btn btn-sm btn-primary" value="Mehet"
@@ -49,12 +51,12 @@ and open the template in the editor.
             </div>
         </div>
         <script>
+            
             function felhNevEllenorzes()
             {
                 if($('#felhNevMezo').val().length < 4)
                 {
                     document.getElementById('hibaFelh').innerHTML = "Felhasználónév hossza nem megfelelő!";
-                    $('.hibaVisszaJelzes').css('content', '\A');
                     return false;
                 }
                 else
@@ -64,12 +66,25 @@ and open the template in the editor.
                 }  
             }
             
+            function emailEllenorzes()
+            {
+                if($('#emailMezo').val().length < 4)
+                {
+                    document.getElementById('hibaEmail').innerHTML = "Érvénytelen e-mail cím!";
+                    return false;
+                }
+                else
+                {
+                    document.getElementById('hibaEmail').innerHTML = "";
+                    return true;
+                }  
+            }
+            
             function jelszoEllenorzes()
             {
                 if($('#jelszo').val().length < 4)
                 {
                     document.getElementById('hibaJelszo').innerHTML = "A jelszó nem megfelelő hosszúságú!";
-                    $('.hibaVisszaJelzes').css('content', '\A');
                     return false;
                 }
                 else
@@ -77,12 +92,26 @@ and open the template in the editor.
                     document.getElementById('hibaJelszo').innerHTML = "";
                     return true;
                 }
-            }            
+            }       
+            
+            function jelszoMegerEllenorzes()
+            {
+                if($('#jelszoMegerMez').val() !=  $('#jelszo').val())
+                {
+                    document.getElementById('hibaJelszoMeger').innerHTML = "A jelszavak nem egyeznek!";
+                    return false;
+                }
+                else
+                {
+                    document.getElementById('hibaJelszoMeger').innerHTML = "";
+                    return true;
+                }
+            }       
             
             
             function ellenorzes()
             {
-                if(felhNevEllenorzes() && jelszoEllenorzes())
+                if(felhNevEllenorzes() && jelszoEllenorzes() && emailEllenorzes() && jelszoMegerEllenorzes())
                 {
                     $('#gombMehet').prop('disabled', false);
                 }

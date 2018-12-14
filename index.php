@@ -49,7 +49,6 @@ and open the template in the editor.
                 if($('#felhNevMezo').val().length < 4)
                 {
                     document.getElementById('hibaFelh').innerHTML = "Felhasználónév hossza nem megfelelő!";
-                    $('.hibaVisszaJelzes').css('content', '\A');
                     return false;
                 }
                 else
@@ -64,7 +63,6 @@ and open the template in the editor.
                 if($('#jelszo').val().length < 4)
                 {
                     document.getElementById('hibaJelszo').innerHTML = "A jelszó nem megfelelő hosszúságú!";
-                    $('.hibaVisszaJelzes').css('content', '\A');
                     return false;
                 }
                 else
