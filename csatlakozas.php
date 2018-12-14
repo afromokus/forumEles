@@ -6,5 +6,6 @@
         die('Sikertelen csatlakozás');
         }
         
-    //echo 'A csatlakozás sikeres!';
+    $accountok = $csatlakozas ->query('SELECT * FROM accountok');
+        
 ?>

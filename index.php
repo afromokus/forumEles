@@ -24,13 +24,13 @@ and open the template in the editor.
                     </h1>
             </div>
             <div id="urlapTarolo" class="jumbotron">
-                <form class="urlap">
+                <form class="urlap" action="belepes.php" method="POST">
                     <div id="formElemek" class="beljebbKezdes">
-                        <input id="felhNevMezo" class="kitoltendoMezo" type='text' placeholder="Felhasználói név" onkeyup="ellenorzes()">
+                        <input name="felhNev" id="felhNevMezo" class="kitoltendoMezo" type='text' placeholder="Felhasználói név" onkeyup="ellenorzes()">
                         <span id="hibaFelh" class="hibaVisszaJelzes">                            
                         </span>
                         <br>
-                        <input id="jelszo" class="kitoltendoMezo" type="password" placeholder="Jelszó" onkeyup="ellenorzes()">
+                        <input name="jelszo" id="jelszo" class="kitoltendoMezo" type="password" placeholder="Jelszó" onkeyup="ellenorzes()">
                         <span id="hibaJelszo" class="hibaVisszaJelzes">                            
                         </span>
                         <br>
@@ -40,13 +40,10 @@ and open the template in the editor.
                 </form>
             </div>
         </div>
-        <?php
-        require_once 'csatlakozas.php';
-        ?>
         <script>
             function felhNevEllenorzes()
             {
-                if($('#felhNevMezo').val().length < 5)
+                if($('#felhNevMezo').val().length < 4)
                 {
                     document.getElementById('hibaFelh').innerHTML = "Felhasználónév hossza nem megfelelő!";
                     $('.hibaVisszaJelzes').css('content', '\A');
@@ -61,7 +58,7 @@ and open the template in the editor.
             
             function jelszoEllenorzes()
             {
-                if($('#jelszo').val().length < 7)
+                if($('#jelszo').val().length < 4)
                 {
                     document.getElementById('hibaJelszo').innerHTML = "A jelszó nem megfelelő hosszúságú!";
                     $('.hibaVisszaJelzes').css('content', '\A');
