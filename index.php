@@ -12,7 +12,7 @@ and open the template in the editor.
         <meta name='author' content="Kirsch János Márk">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
         <link rel="stylesheet" href="3DLabCasc.css"/>
-        
+        <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
     </head>
     <body class="jumbotron">
         <div class ='kozepre'>
