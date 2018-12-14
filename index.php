@@ -49,6 +49,7 @@ and open the template in the editor.
                 if($('#felhNevMezo').val().length < 5)
                 {
                     document.getElementById('hibaFelh').innerHTML = "Felhasználónév hossza nem megfelelő!";
+                    $('.hibaVisszaJelzes').css('content', '\A');
                     return false;
                 }
                 else
@@ -63,6 +64,7 @@ and open the template in the editor.
                 if($('#jelszo').val().length < 7)
                 {
                     document.getElementById('hibaJelszo').innerHTML = "A jelszó nem megfelelő hosszúságú!";
+                    $('.hibaVisszaJelzes').css('content', '\A');
                     return false;
                 }
                 else
@@ -77,11 +79,11 @@ and open the template in the editor.
             {
                 if(felhNevEllenorzes() && jelszoEllenorzes())
                 {
-                    $(':input[type="submit"]').prop('disabled', false);
+                    $('#gombMehet').prop('disabled', false);
                 }
                 else
                 {
-                    $(':input[type="submit"]').prop('disabled', true);
+                    $('#gombMehet').prop('disabled', true);
                 }
             }
             

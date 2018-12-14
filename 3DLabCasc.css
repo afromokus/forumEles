@@ -67,6 +67,7 @@ h1
    background-color: rgb(125,127,148); 
 }
 
+
 .btn-primary
 {
     margin-top: 3%;
@@ -133,6 +134,12 @@ h1
     {
         margin: 1%;
         margin-top: 3%;
+    }
+    
+    span:before
+    {
+        white-space: pre;
+        content: '\A';
     }
     
 }
