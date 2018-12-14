@@ -37,7 +37,7 @@ and open the template in the editor.
             </div>
         </div>
         <?php
-        
+        require_once 'csatlakozas.php';
         ?>
         <script>
             
