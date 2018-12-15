@@ -37,8 +37,23 @@ and open the template in the editor.
                         <span id="hibaJelszo" class="hibaVisszaJelzes">                            
                         </span>
                         <br>
+                        <div class="linkTaroloKozep">
+                            <a id="regGombKozep" href="regisztracio.php" tabindex="4">
+                                Regisztráció
+                            </a>
+                        </div>
                         <input id="gombMehet" type="submit" class="btn btn-sm btn-primary" value="Mehet"
                                    disabled="disabled">
+                        <div class="linkTaroloMini">
+                            Még nem regisztrált 
+                            <br> 
+                            felhasználó? 
+                            <br>
+                            Megteheti itt: 
+                            <a id="regGombMini" href="regisztracio.php" tabindex="4">
+                                Regisztráció
+                            </a>
+                        </div>
                     </div>
                 </form>
             </div>

@@ -85,6 +85,16 @@ h1
     text-decoration: underline;
 }
 
+#regGombKozep
+{
+    display: none;
+}
+
+.linkTaroloMini
+{
+    display: none;
+}
+
 @media (max-width: 1080px)
 { 
     .jumbotron
@@ -149,4 +159,50 @@ h1
         content: '\A';
     }
     
+    #regGomb
+    {
+       display: none;       
+    }
+    
+    .linkTaroloKozep
+    {
+        display: inline;
+        position: relative;
+        top: 8px;
+        padding: 2%;
+    }
+
+    #regGombKozep
+    {
+        display: inline;
+        font-size: 150%;
+        text-decoration: underline;
+    }    
+}
+
+@media (max-width: 720px)
+{
+    #regGombKozep
+    {
+        display: none;
+    }   
+    
+    .linkTaroloKozep
+    {
+        display: none;
+    }
+
+    .linkTaroloMini
+    {
+        display: block;
+        font-size: 150%;
+        text-align: left;
+        padding-left: 115px;
+        color: rgb(180,210,157);
+    }
+    
+    #regGombMini
+    {        
+        text-decoration: underline;
+    }
 }
