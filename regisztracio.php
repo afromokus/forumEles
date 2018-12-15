@@ -111,7 +111,7 @@ and open the template in the editor.
             
             function ellenorzes()
             {
-                if(felhNevEllenorzes() && jelszoEllenorzes() && emailEllenorzes() && jelszoMegerEllenorzes())
+                if(felhNevEllenorzes() && emailEllenorzes() && jelszoEllenorzes() && jelszoMegerEllenorzes())
                 {
                     $('#gombMehet').prop('disabled', false);
                 }
