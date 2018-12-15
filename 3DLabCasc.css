@@ -80,9 +80,10 @@ h1
 
 #regGomb
 {
-    padding-left: 30%; 
+    padding-left: 23%; 
     font-size: 250%;
     text-decoration: underline;
+    white-space: nowrap;
 }
 
 #regGombKozep
@@ -93,6 +94,13 @@ h1
 .linkTaroloMini
 {
     display: none;
+}
+
+.hibaVisszaJelzes
+{
+    color: red;
+    padding-right: 0;
+    margin-right: 0;
 }
 
 @media (max-width: 1080px)
