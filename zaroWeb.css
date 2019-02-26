@@ -1,0 +1,37 @@
+#menuTabla
+{
+	width : 100%;
+	border: 1px solid black;
+}
+
+
+.alsoElem
+{
+	padding-left: 90%;	
+}
+
+.menuGomb
+{
+	border: none;
+	color: black;
+	padding: 0;
+	text-decoration: none;
+	background: none;
+}
+
+.menuGomb:hover
+{
+	text-decoration: underline;
+}
+
+#kihuzas
+{
+	width : 100%;
+}
+
+#patreonLink
+{
+	font-size: 20px;
+	padding-left: 50%;
+	text-decoration: underline;
+}
