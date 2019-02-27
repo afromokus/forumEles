@@ -4,6 +4,48 @@
 	border: 1px solid black;
 }
 
+.kepTarolo
+{
+	width: 18%;
+	padding-bottom: 9%;
+	display: inline-block;
+	background-size: 100% 100%;
+}
+
+#homadarKep
+{
+	background-image: url("kepek/homadar.jpg");	
+}
+
+#szarnyalasAFoldonKep
+{
+	background-image: url("kepek/szarnyalasAFoldon.jpg");	
+}
+
+#szeretetEsVedelemKep
+{
+	background-image: url("kepek/szeretetEsVedelem.jpg");	
+}
+
+#teazasKep
+{
+	background-image: url("kepek/teazas.jpg");	
+}
+
+#tocsaLanyKep
+{
+	background-image: url("kepek/tocsaLany.jpg");	
+}
+
+#velenceKep
+{
+	background-image: url("kepek/velence.jpg");	
+}
+
+#vorosEgKep
+{
+	background-image: url("kepek/vorosEg.jpg");	
+}
 
 .alsoElem
 {
