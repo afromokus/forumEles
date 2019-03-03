@@ -66,14 +66,14 @@
 					<div class = "kihuzas">
 						<td class = "folsoElem" ><button class = "menuGomb" onclick = "valtFoOldalNezetre()">Főoldal</button></td>
 						<td class = "folsoElem"><button class = "menuGomb" onclick = "valtGaleriaNezetre()">Galéria</button></td>
-						<td class = "folsoElem"><button class = "menuGomb">Témák keresése</button><img source"#"/></td>
+						<td class = "folsoElem"><button class = "menuGomb">Témák keresése <span id = "keresesKep">&nbsp	</span></button></td>
 						<td class = "folsoElem"><button class = "menuGomb">Statisztika</button></td>	
 					</div>					
 				</tr>
 			</table>			
 		</div>
 		
-		<span id = "alsoSor" class = "navDiv">
+		<span id = "alsoSor" class = "menuGomb">
 			<div class = "alsoElem"><button class = "menuGomb" onclick = "kilepes()">Kijelentkezés</button></div>
 		</span>
 		
@@ -82,7 +82,7 @@
 		</div>
 		
 		<div id = "patreonLink">
-			<a href= "#">Támogass minket a patreonon</a>
+			<a href= "https://www.patreon.com/" target = "_blank">Támogass minket a patreonon</a>
 		</div>
 	</body>
 </html>

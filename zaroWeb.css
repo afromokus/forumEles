@@ -1,10 +1,11 @@
-body, div, table, span
+div
 {
 	background-color: rgb(70, 70, 70);	
-	border: 0;
-	padding: 0;
+	border: 0px;
+	padding: 10px;
 	border: 0;
 	color: rgb(135, 206, 255);
+	font-size: 120%;
 }
 
 #menuTabla
@@ -19,6 +20,17 @@ body, div, table, span
 	padding-bottom: 9%;
 	display: inline-block;
 	background-size: 100% 100%;
+}
+
+.folsoElem
+{
+	font-size: 150%;
+	color: green;
+}
+#keresesKep
+{	
+	background-image: url("kepek/nagyitoKicsi.png");
+	padding-right: 20px;
 }
 
 #homadarKep
@@ -57,8 +69,8 @@ body, div, table, span
 }
 
 .alsoElem
-{
-	padding-left: 90%;	
+{	
+	float: right;
 }
 
 .menuGomb
@@ -77,12 +89,12 @@ body, div, table, span
 
 #kihuzas
 {
-	width : 100%;
+	float: right;
 }
 
 #patreonLink
 {
-	font-size: 20px;
+	font-size: 180%;
 	padding-left: 50%;
 	text-decoration: underline;
 }
