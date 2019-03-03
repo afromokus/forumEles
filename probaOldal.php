@@ -74,6 +74,51 @@
 			<div class = "kepTarolo" id = "vorosEgKep">
 			</div>
 		
+			<div class = "kepTarolo" id = "homadarKep">
+			</div>
+			<div class = "kepTarolo" id = "szarnyalasAFoldonKep">
+			</div>
+			<div class = "kepTarolo" id = "szeretetEsVedelemKep">
+			</div>
+			<div class = "kepTarolo" id = "teazasKep">
+			</div>
+			<div class = "kepTarolo" id = "tocsaLanyKep">
+			</div>
+			<div class = "kepTarolo" id = "velenceKep">
+			</div>
+			<div class = "kepTarolo" id = "vorosEgKep">
+			</div>
+		
+			<div class = "kepTarolo" id = "homadarKep">
+			</div>
+			<div class = "kepTarolo" id = "szarnyalasAFoldonKep">
+			</div>
+			<div class = "kepTarolo" id = "szeretetEsVedelemKep">
+			</div>
+			<div class = "kepTarolo" id = "teazasKep">
+			</div>
+			<div class = "kepTarolo" id = "tocsaLanyKep">
+			</div>
+			<div class = "kepTarolo" id = "velenceKep">
+			</div>
+			<div class = "kepTarolo" id = "vorosEgKep">
+			</div>
+		
+			<div class = "kepTarolo" id = "homadarKep">
+			</div>
+			<div class = "kepTarolo" id = "szarnyalasAFoldonKep">
+			</div>
+			<div class = "kepTarolo" id = "szeretetEsVedelemKep">
+			</div>
+			<div class = "kepTarolo" id = "teazasKep">
+			</div>
+			<div class = "kepTarolo" id = "tocsaLanyKep">
+			</div>
+			<div class = "kepTarolo" id = "velenceKep">
+			</div>
+			<div class = "kepTarolo" id = "vorosEgKep">
+			</div>
+		
 		</div>
 		<div id = "patreonLink">
 			<a href= "#">Támogass minket a patreonon</a>
