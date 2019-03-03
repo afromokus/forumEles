@@ -18,7 +18,7 @@
 		function valtGaleriaNezetre()
 		{
 			$("#szoveg").html('');
-			$("#szoveg").html('<?php echo '<div class = "kepTarolo" id = "homadarKep"></div><div class = "kepTarolo" id = "szarnyalasAFoldonKep"></div>	<div class = "kepTarolo" id = "szeretetEsVedelemKep"></div><div class = "kepTarolo" id = "teazasKep"></div><div class = "kepTarolo" id = "tocsaLanyKep"></div><div class = "kepTarolo" id = "velenceKep"></div><div class = "kepTarolo" id = "vorosEgKep"></div><div class = "kepTarolo" id = "homadarKep"></div><div class = "kepTarolo" id = "szarnyalasAFoldonKep"></div>	<div class = "kepTarolo" id = "szeretetEsVedelemKep"></div><div class = "kepTarolo" id = "teazasKep"></div><div class = "kepTarolo" id = "tocsaLanyKep"></div><div class = "kepTarolo" id = "velenceKep"></div><div class = "kepTarolo" id = "vorosEgKep"></div><div class = "kepTarolo" id = "homadarKep"></div><div class = "kepTarolo" id = "szarnyalasAFoldonKep"></div>	<div class = "kepTarolo" id = "szeretetEsVedelemKep"></div><div class = "kepTarolo" id = "teazasKep"></div><div class = "kepTarolo" id = "tocsaLanyKep"></div><div class = "kepTarolo" id = "velenceKep"></div><div class = "kepTarolo" id = "vorosEgKep"></div><div class = "kepTarolo" id = "homadarKep"></div><div class = "kepTarolo" id = "szarnyalasAFoldonKep"></div>	<div class = "kepTarolo" id = "szeretetEsVedelemKep"></div><div class = "kepTarolo" id = "teazasKep"></div><div class = "kepTarolo" id = "tocsaLanyKep"></div><div class = "kepTarolo" id = "velenceKep"></div><div class = "kepTarolo" id = "vorosEgKep"></div><div class = "kepTarolo" id = "homadarKep"></div><div class = "kepTarolo" id = "szarnyalasAFoldonKep"></div>	<div class = "kepTarolo" id = "szeretetEsVedelemKep"></div><div class = "kepTarolo" id = "teazasKep"></div><div class = "kepTarolo" id = "tocsaLanyKep"></div><div class = "kepTarolo" id = "velenceKep"></div><div class = "kepTarolo" id = "vorosEgKep"></div>'?>');
+			$("#szoveg").html('<?php echo '<p id = "kepBekezdes"><div class = "kepTarolo" id = "homadarKep"></div><div class = "kepTarolo" id = "szarnyalasAFoldonKep"></div>	<div class = "kepTarolo" id = "szeretetEsVedelemKep"></div><div class = "kepTarolo" id = "teazasKep"></div><div class = "kepTarolo" id = "tocsaLanyKep"></div><div class = "kepTarolo" id = "velenceKep"></div><div class = "kepTarolo" id = "vorosEgKep"></div><div class = "kepTarolo" id = "homadarKep"></div><div class = "kepTarolo" id = "szarnyalasAFoldonKep"></div>	<div class = "kepTarolo" id = "szeretetEsVedelemKep"></div><div class = "kepTarolo" id = "teazasKep"></div><div class = "kepTarolo" id = "tocsaLanyKep"></div><div class = "kepTarolo" id = "velenceKep"></div><div class = "kepTarolo" id = "vorosEgKep"></div><div class = "kepTarolo" id = "homadarKep"></div><div class = "kepTarolo" id = "szarnyalasAFoldonKep"></div>	<div class = "kepTarolo" id = "szeretetEsVedelemKep"></div><div class = "kepTarolo" id = "teazasKep"></div><div class = "kepTarolo" id = "tocsaLanyKep"></div><div class = "kepTarolo" id = "velenceKep"></div><div class = "kepTarolo" id = "vorosEgKep"></div><div class = "kepTarolo" id = "homadarKep"></div><div class = "kepTarolo" id = "szarnyalasAFoldonKep"></div>	<div class = "kepTarolo" id = "szeretetEsVedelemKep"></div><div class = "kepTarolo" id = "teazasKep"></div><div class = "kepTarolo" id = "tocsaLanyKep"></div><div class = "kepTarolo" id = "velenceKep"></div><div class = "kepTarolo" id = "vorosEgKep"></div><div class = "kepTarolo" id = "homadarKep"></div><div class = "kepTarolo" id = "szarnyalasAFoldonKep"></div>	<div class = "kepTarolo" id = "szeretetEsVedelemKep"></div><div class = "kepTarolo" id = "teazasKep"></div><div class = "kepTarolo" id = "tocsaLanyKep"></div><div class = "kepTarolo" id = "velenceKep"></div><div class = "kepTarolo" id = "vorosEgKep"></div></p>'?>');
 		}
 		
 		function valtFoOldalNezetre()
@@ -31,9 +31,6 @@
 	<body>			
 		<div id = "felsoSor" class = "navDiv">
 			<table id = "menuTabla">
-				<tr>
-					<td>
-						<div id = "kommFelh" class = "kihuzas">
 							 <?php
 									require_once 'csatlakozas.php';
 									
@@ -45,7 +42,7 @@
 										{
 										if($felhasznaloAdatokEgySora["felhNev"] == $_POST["felhNev"] && $felhasznaloAdatokEgySora["jelszo"] == $_POST["jelszo"])
 											{
-											echo 'Üdvözöljük '.$felhasznaloAdatokEgySora["felhNev"].'!';
+											echo '<tr><td colspan = "4" class = "folsoElem">Üdvözöljük '.$felhasznaloAdatokEgySora["felhNev"].'!</td></tr>';
 											$sikeresBelepes = true;
 											break;
 											}
@@ -59,9 +56,6 @@
 										}
 									
 							?>
-						</div>
-					</td>
-				</tr>
 				<tr>
 					<div class = "kihuzas">
 						<td class = "folsoElem" ><button class = "menuGomb" onclick = "valtFoOldalNezetre()">Főoldal</button></td>

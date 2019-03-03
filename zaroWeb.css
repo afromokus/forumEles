@@ -1,3 +1,9 @@
+html, body
+{
+	background-color: rgb(70, 70, 70);	
+	height: 100px;
+}
+
 div
 {
 	background-color: rgb(70, 70, 70);	
@@ -10,8 +16,12 @@ div
 
 #menuTabla
 {
-	width : 100%;
-	border: 1px solid black;
+	width: 100%;
+}
+
+td
+{
+	border: 2px solid black;
 }
 
 .kepTarolo
@@ -25,11 +35,18 @@ div
 .folsoElem
 {
 	font-size: 150%;
-	color: green;
+	padding-left: 1.2%;
 }
+
+#kepBekezdes
+{
+	padding-top: 2%;
+}
+
 #keresesKep
 {	
 	background-image: url("kepek/nagyitoKicsi.png");
+	background-repeat: no-repeat;
 	padding-right: 20px;
 }
 
