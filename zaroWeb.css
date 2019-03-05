@@ -5,16 +5,15 @@ body
 	float: right;
 	width: 100%;
 	background-size: 100% 100%;
-	min-width: 1000px;
+	min-width: 800px;
 }
 
 #relevans
 {
 	float: middle;
 	width: 80%;
-	vertical-align: center;
-	margin-left: 8%;
-	margin-right: 8%;
+	margin-left: 10%;
+	margin-right: auto%;
 	margin-top: 2%;
 	margin-bottom: 2%;
 	background-color: transparent;
