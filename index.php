@@ -54,6 +54,10 @@ and open the template in the editor.
                                 Regisztráció
                             </a>
                         </div>
+						
+                        <a id="regGomb" href="belepes.php" tabindex="5">
+                            Belépés vendégként
+                        </a>
                     </div>
                 </form>
             </div>

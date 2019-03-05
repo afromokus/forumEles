@@ -8,12 +8,19 @@
 	<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
 	<script>
 	
+		var belepesOldal = "index.php";
+	
 		$(document).ready(function(){valtFoOldalNezetre()});
 	
 		function kilepes()
 		{
 			$.get("kijel.php");
-			window.location.replace("index.php");
+			window.location.replace(belepesOldal);
+		}
+		
+		function belepes()
+		{
+			window.location.replace(belepesOldal);			
 		}
 		
 		function valtGaleriaNezetre()
@@ -51,7 +58,7 @@
 									
 									if(!$sikeresBelepes)
 										{
-										echo '<tr><td colspan = "4" id = "felhKomm" class = "folsoElem"><button>Belépés</button></td></tr>';
+										echo '<tr><td colspan = "4" id = "belepesGombTd"><button id = "belepesBtn" onclick = "belepes()">Belépés</button></td></tr>';
 										}
 									
 							?>
@@ -63,12 +70,13 @@
 						<td class = "folsoElem"><button class = "menuGomb">Statisztika</button></td>	
 					</div>					
 				</tr>
+				<tr>
+					<td id = "alsoSor" class = "menuGomb" colspan = "4">
+						<div class = "alsoElem"><button class = "menuGomb" onclick = "kilepes()">Kijelentkezés</button></div>
+					</td>
+				</tr>
 			</table>			
 		</div>
-		
-		<span id = "alsoSor" class = "menuGomb">
-			<div class = "alsoElem"><button class = "menuGomb" onclick = "kilepes()">Kijelentkezés</button></div>
-		</span>
 		
 		
 		<div id = "szoveg">
