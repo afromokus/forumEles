@@ -42,7 +42,7 @@
 										{
 										if($felhasznaloAdatokEgySora["felhNev"] == $_POST["felhNev"] && $felhasznaloAdatokEgySora["jelszo"] == $_POST["jelszo"])
 											{
-											echo '<tr><td colspan = "4" class = "folsoElem">Üdvözöljük '.$felhasznaloAdatokEgySora["felhNev"].'!</td></tr>';
+											echo '<tr><td colspan = "4" id = "felhKomm" class = "folsoElem">Üdvözöljük '.$felhasznaloAdatokEgySora["felhNev"].'!</td></tr>';
 											$sikeresBelepes = true;
 											break;
 											}
@@ -51,8 +51,8 @@
 									
 									if(!$sikeresBelepes)
 										{
-										echo 'Érvénytelen felhasználónév, vagy jelszó!';
-										echo '<br><a href="index.php">Vissza</a>';
+										echo '<tr><td colspan = "4" id = "felhKomm" class = "folsoElem"><buttond>Belépés</button></td></tr>';
+										$_POST = array();
 										}
 									
 							?>
