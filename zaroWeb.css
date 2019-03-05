@@ -1,7 +1,40 @@
-html, body
+body
 {
-	background-color: rgb(70, 70, 70);	
-	height: 100px;
+	background-image: url("kepek/bodyHatter.png");	
+	background-repeat: no-repeat;
+	float: right;
+	width: 100%;
+	background-size: 100% 100%;
+	min-width: 1000px;
+}
+
+#relevans
+{
+	float: middle;
+	width: 80%;
+	vertical-align: center;
+	margin-left: 8%;
+	margin-right: 8%;
+	margin-top: 2%;
+	margin-bottom: 2%;
+	background-color: transparent;
+	
+}
+
+#alsoResz
+{
+	border: 20px solid red;	
+}
+
+#hatterAlsoResz
+{
+	background-color: red;
+}
+
+#elvalaszto
+{
+	background-color: transparent;
+	padding: 10px;
 }
 
 div
@@ -14,6 +47,15 @@ div
 	font-size: 120%;
 }
 
+#tabla
+{
+	background-color: transparent;	
+}
+
+ #felhKomm
+ {
+	 padding-left: 1.2%;
+ }
 
 #belepesGombTd
 {
@@ -27,6 +69,11 @@ div
 	border: none;
 	font-style: italic;
 	font-weight: 900;
+}
+
+#belepesBtn:hover
+{
+	text-decoration: underline;
 }
 
 #menuTabla
@@ -102,7 +149,14 @@ td
 
 .alsoElem
 {	
+	border-style: solid;
+	border-width: 0px 2px 2px 2px;
+	border-color: black;
+	padding-left: 8%;
+	padding-right: 2%;
 	float: right;
+	padding-bottom: 0%;
+	padding-top: 0%;
 }
 
 .menuGomb
