@@ -6,16 +6,88 @@
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 	</head>
 	<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
-	<script>
-	
+	<body>
+		<div id = "relevans">
+			<div id = "tabla">
+				<div id = "felsoSor" class = "navDiv">
+					<table id = "menuTabla">
+									 <?php
+											require_once 'csatlakozas.php';
+											
+											$sikeresBelepes = false;
+											
+											if(isset($_POST["felhNev"]) && isset($_POST["jelszo"]))
+											{
+											while($felhasznaloAdatokEgySora = $accountok -> fetch_assoc())
+												{
+												if($felhasznaloAdatokEgySora["felhNev"] == $_POST["felhNev"] && $felhasznaloAdatokEgySora["jelszo"] == $_POST["jelszo"])
+													{
+													echo '<tr><td colspan = "4" id = "felhKomm" class = "folsoElem">Üdvözöljük '.$felhasznaloAdatokEgySora["felhNev"].'!</td></tr>';
+													$sikeresBelepes = true;
+													break;
+													}
+												}
+											}
+											
+											if(!$sikeresBelepes)
+												{
+												echo '<tr><td colspan = "4" id = "belepesGombTd"><button id = "belepesBtn" onclick = "belepes()">Belépés</button></td></tr>';
+												$_POST["felhNev"] = "v";
+												}
+											
+									?>
+						<tr>
+							<div class = "kihuzas">
+								<td class = "folsoElem" ><button id = "foOldalGomb" class = "menuGomb" onclick = "valtFoOldalNezetre()">Főoldal</button></td>
+								<td class = "folsoElem"><button id = "galeriaGomb" class = "menuGomb" onclick = "valtGaleriaNezetre()">Galéria</button></td>
+								<td class = "folsoElem"><button class = "menuGomb">Témák keresése <span id = "keresesKep">&nbsp	</span></button></td>
+								<td class = "folsoElem"><button class = "menuGomb">Statisztika</button></td>	
+							</div>					
+						</tr>
+						<tr id = "kijelGombSor">
+							<td id = "alsoSor" class = "menuGomb" colspan = "4">
+								<div class = "alsoElem"><button class = "menuGomb" onclick = "kilepes()">Kijelentkezés</button></div>
+							</td>
+						</tr>
+					</table>			
+				</div>
+			</div>	
+					
+			<div id = "elvalaszto">
+			</div>			
+			
+			<div id = "hatterAlsoResz">
+				<div id = "alsoResz">
+					<div id = "szoveg">
+					</div>
+						
+					<div id = "patreonLink">
+						<a href= "https://www.patreon.com/" target = "_blank">Támogass minket a patreonon</a>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+	</body>
+	<script>		
+		
 		var belepesOldal = "index.php";
+		
+		
 	
-		$(document).ready(function(){valtFoOldalNezetre()});
+		$(document).ready(function()
+		{
+			valtFoOldalNezetre();
+			if('<?php echo $_POST["felhNev"]; ?>' == "v")
+			{
+				$("#kijelGombSor").hide();
+			}
+			});
 	
 		function kilepes()
 		{
 			$.get("kijel.php");
-			window.location.replace(belepesOldal);
+			window.location.replace(belepesOldal);			
 		}
 		
 		function belepes()
@@ -51,66 +123,4 @@
 		}
 		
 	</script>
-	<body>
-		<div id = "relevans">
-			<div id = "tabla">
-				<div id = "felsoSor" class = "navDiv">
-					<table id = "menuTabla">
-									 <?php
-											require_once 'csatlakozas.php';
-											
-											$sikeresBelepes = false;
-											
-											if(isset($_POST["felhNev"]) && isset($_POST["jelszo"]))
-											{
-											while($felhasznaloAdatokEgySora = $accountok -> fetch_assoc())
-												{
-												if($felhasznaloAdatokEgySora["felhNev"] == $_POST["felhNev"] && $felhasznaloAdatokEgySora["jelszo"] == $_POST["jelszo"])
-													{
-													echo '<tr><td colspan = "4" id = "felhKomm" class = "folsoElem">Üdvözöljük '.$felhasznaloAdatokEgySora["felhNev"].'!</td></tr>';
-													$sikeresBelepes = true;
-													break;
-													}
-												}
-											}
-											
-											if(!$sikeresBelepes)
-												{
-												echo '<tr><td colspan = "4" id = "belepesGombTd"><button id = "belepesBtn" onclick = "belepes()">Belépés</button></td></tr>';
-												}
-											
-									?>
-						<tr>
-							<div class = "kihuzas">
-								<td class = "folsoElem" ><button id = "foOldalGomb" class = "menuGomb" onclick = "valtFoOldalNezetre()">Főoldal</button></td>
-								<td class = "folsoElem"><button id = "galeriaGomb" class = "menuGomb" onclick = "valtGaleriaNezetre()">Galéria</button></td>
-								<td class = "folsoElem"><button class = "menuGomb">Témák keresése <span id = "keresesKep">&nbsp	</span></button></td>
-								<td class = "folsoElem"><button class = "menuGomb">Statisztika</button></td>	
-							</div>					
-						</tr>
-						<tr>
-							<td id = "alsoSor" class = "menuGomb" colspan = "4">
-								<div class = "alsoElem"><button class = "menuGomb" onclick = "kilepes()">Kijelentkezés</button></div>
-							</td>
-						</tr>
-					</table>			
-				</div>
-			</div>	
-					
-			<div id = "elvalaszto">
-			</div>			
-			
-			<div id = "hatterAlsoResz">
-				<div id = "alsoResz">
-					<div id = "szoveg">
-					</div>
-						
-					<div id = "patreonLink">
-						<a href= "https://www.patreon.com/" target = "_blank">Támogass minket a patreonon</a>
-					</div>
-				</div>
-			</div>
-			
-		</div>
-	</body>
 </html>
