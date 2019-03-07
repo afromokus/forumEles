@@ -119,11 +119,6 @@
 				$(this).css("text-decoration", "underline");
 			});
 		
-		$(".kepTarolo").on('click', function()
-		{
-			window.location.replace("www.google.com");
-		});
-		
 		}
 		
 	</script>
