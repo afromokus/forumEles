@@ -10,32 +10,33 @@
 		<div id = "relevans">
 			<div id = "tabla">
 				<div id = "felsoSor" class = "navDiv">
-					<table id = "menuTabla">
-									 <?php
-											require_once 'csatlakozas.php';
+					<table id = "menuTabla">						
+							
+								 <?php
+										require_once 'csatlakozas.php';
+										
+										$sikeresBelepes = false;
 											
-											$sikeresBelepes = false;
-											
-											if(isset($_POST["felhNev"]) && isset($_POST["jelszo"]))
+										if(isset($_POST["felhNev"]) && isset($_POST["jelszo"]))
+										{
+										while($felhasznaloAdatokEgySora = $accountok -> fetch_assoc())
 											{
-											while($felhasznaloAdatokEgySora = $accountok -> fetch_assoc())
+											if($felhasznaloAdatokEgySora["felhNev"] == $_POST["felhNev"] && $felhasznaloAdatokEgySora["jelszo"] == $_POST["jelszo"])
 												{
-												if($felhasznaloAdatokEgySora["felhNev"] == $_POST["felhNev"] && $felhasznaloAdatokEgySora["jelszo"] == $_POST["jelszo"])
-													{
-													echo '<tr><td colspan = "4" id = "felhKomm" class = "folsoElem">Üdvözöljük '.$felhasznaloAdatokEgySora["felhNev"].'!</td></tr>';
-													$sikeresBelepes = true;
-													break;
-													}
+												echo '<tr><td colspan = "3" id = "felhKomm" class = "folsoElem noBorderRight">Üdvözöljük '.$felhasznaloAdatokEgySora["felhNev"].'!</td><td class = "noBorderLeft">Hami</td></tr>';
+												$sikeresBelepes = true;
+												break;
 												}
 											}
+										}
 											
 											if(!$sikeresBelepes)
 												{
 												echo '<tr><td colspan = "4" id = "belepesGombTd"><button id = "belepesBtn" onclick = "belepes()">Belépés</button></td></tr>';
 												$_POST["felhNev"] = "v";
-												}
-											
-									?>
+											}												
+								?>						
+						
 						<tr>
 							<div class = "kihuzas">
 								<td class = "folsoElem" ><button id = "foOldalGomb" class = "menuGomb" onclick = "valtFoOldalNezetre()">Főoldal</button></td>
@@ -62,7 +63,7 @@
 					</div>
 						
 					<div id = "patreonLink">
-						<a href= "https://www.patreon.com/" target = "_blank">Támogass minket a patreonon</a>
+						<a href= "https://www.patreon.com/user?u=18084728" target = "_blank">Támogass minket a patreonon</a>
 					</div>
 				</div>
 			</div>

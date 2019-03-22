@@ -86,6 +86,16 @@ td
 	border: 2px solid black;
 }
 
+.noBorderLeft
+{
+	border-left: 0px;
+}
+
+.noBorderRight
+{
+	border-right: 0px;
+}
+
 .kepTarolo
 {
 	width: 19.67%;
