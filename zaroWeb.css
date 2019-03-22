@@ -39,7 +39,8 @@ body
 
 div
 {
-	background-color: rgb(70, 70, 70);	
+	background-color: rgb(70, 70, 70);
+	opacity: 0.98;
 	border: 0px;
 	padding: 10px;
 	border: 0;
@@ -50,6 +51,7 @@ div
 #tabla
 {
 	background-color: transparent;	
+	opacity: 0.9;
 }
 
  #felhKomm
@@ -63,15 +65,15 @@ div
 	padding-left: 1.2%;	
 }
 
-#belepesBtn
+.lepBtn
 {
-	background-color: rgb(70, 70, 70);
+	background-color: rgb(70, 70, 70);	
 	border: none;
 	font-style: italic;
 	font-weight: 900;
 }
 
-#belepesBtn:hover
+.lepBtn:hover
 {
 	text-decoration: underline;
 }
@@ -121,6 +123,11 @@ td
 	background-image: url("kepek/nagyitoKicsi.png");
 	background-repeat: no-repeat;
 	padding-right: 20px;
+}
+
+#profSzerk
+{
+	color: rgb(135, 206, 255);
 }
 
 #homadarKep

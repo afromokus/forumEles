@@ -10,45 +10,14 @@
 		<div id = "relevans">
 			<div id = "tabla">
 				<div id = "felsoSor" class = "navDiv">
-					<table id = "menuTabla">						
+					<table id = "menuTabla">		
+					
+							<tr>
+								<td colspan = "4" id = "belepesGombTd">
+									<button id = "VisszaBtn" class = "lepBtn" onclick = "vissza()">Vissza</button>
+								</td>
+							</tr>
 							
-								 <?php
-										require_once 'csatlakozas.php';
-										
-										$sikeresBelepes = false;
-										session_start();
-											
-										if(isset($_POST["felhNev"]) && isset($_POST["jelszo"]))
-										{											
-										while($felhasznaloAdatokEgySora = $accountok -> fetch_assoc())
-											{
-											if($felhasznaloAdatokEgySora["felhNev"] == $_POST["felhNev"] && $felhasznaloAdatokEgySora["jelszo"] == $_POST["jelszo"])
-												{
-												echo '<tr><td colspan = "3" id = "felhKomm" class = "folsoElem noBorderRight">Üdvözöljük '.$felhasznaloAdatokEgySora["felhNev"].'!</td><td class = "noBorderLeft"><button id = "profSzerk" class = "menuGomb" onclick = "valtProfSzerk()">Profil szekresztése</button></td></tr>';
-												$sikeresBelepes = true;
-												$bejelentkezettNev = $felhasznaloAdatokEgySora["felhNev"];
-												$_SESSION["bejelNev"] = $bejelentkezettNev;
-												$_SESSION["bejelJelszo"] = $felhasznaloAdatokEgySora["jelszo"];
-												break;
-												}												
-											}
-										}
-											
-											if(!$sikeresBelepes)
-												{
-												echo '<tr><td colspan = "4" id = "belepesGombTd"><button class = "lepBtn" onclick = "belepes()">Belépés</button></td></tr>';
-												$_POST["felhNev"] = "v";
-											}												
-								?>						
-						
-						<tr>
-							<div class = "kihuzas">
-								<td class = "folsoElem" ><button id = "foOldalGomb" class = "menuGomb" onclick = "valtFoOldalNezetre()">Főoldal</button></td>
-								<td class = "folsoElem"><button id = "galeriaGomb" class = "menuGomb" onclick = "valtGaleriaNezetre()">Galéria</button></td>
-								<td class = "folsoElem"><button class = "menuGomb">Témák keresése <span id = "keresesKep">&nbsp	</span></button></td>
-								<td class = "folsoElem"><button class = "menuGomb">Statisztika</button></td>	
-							</div>					
-						</tr>
 						<tr id = "kijelGombSor">
 							<td id = "alsoSor" class = "menuGomb" colspan = "4">
 								<div class = "alsoElem"><button class = "menuGomb" onclick = "kilepes()">Kijelentkezés</button></div>
@@ -75,17 +44,9 @@
 		</div>
 	</body>
 	<script>		
+		var bejelNev = ('<?php session_start(); echo $_SESSION["bejelNev"]; ?>');
 		
 		var belepesOldal = "index.php";
-	
-		$(document).ready(function()
-		{
-			valtFoOldalNezetre();
-			if('<?php echo $_POST["felhNev"]; ?>' == "v")
-			{
-				$("#kijelGombSor").hide();
-			}
-			});
 	
 		function kilepes()
 		{
@@ -93,14 +54,9 @@
 			window.location.replace(belepesOldal);			
 		}
 		
-		function belepes()
+		function vissza()
 		{
-			window.location.replace(belepesOldal);			
-		}
-		
-		function valtProfSzerk()
-		{
-			window.location.replace("profilSzerk.php");
+			$.post("belepes.php", {felhNev: bejelNev, jelszo: '<?php echo $_SESSION["bejelJelszo"]; ?>'});			
 		}
 		
 		function valtGaleriaNezetre()
