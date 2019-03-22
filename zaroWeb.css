@@ -202,3 +202,36 @@ td
 	padding-left: 50%;
 	text-decoration: underline;
 }
+
+#szoveg
+{
+	min-height: 300px;
+}
+
+.oldalra
+{
+	margin-right: 10%;
+	display: inline;
+}
+
+#gombMehet
+{
+	margin-left: 60%;
+	padding: 5% 10%;
+	font-size: 50%;
+}
+
+#valtInput
+{
+	width: 20px;
+}
+
+.valtoztatas:hover
+{
+	cursor: pointer;
+	text-decoration: underline;
+}
+
+@media (max-width: 1000px)
+{
+}

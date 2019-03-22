@@ -36,7 +36,7 @@
 											
 											if(!$sikeresBelepes)
 												{
-												echo '<tr><td colspan = "4" id = "belepesGombTd"><button class = "lepBtn" onclick = "belepes()">Belépés</button></td></tr>';
+												echo '<tr><td colspan = "4" id = "belepesGombTd"><button class = "lepBtn" onclick = "belepes()">Bejelentkezés</button></td></tr>';
 												$_POST["felhNev"] = "v";
 											}												
 								?>						
@@ -96,8 +96,45 @@
 		
 		function valtProfSzerk()
 		{
-			$("#szoveg").html('<input type = "">');
+			$("#szoveg").html('<form><ul><li><div class = "valtoztatas" onclick = "valtJelszoMegvaltoztatas()">Jelszóváltoztatás</div></li><li><div class = "valtoztatas" onclick = "valtEmailMegvaltoztatas()">E-mail cím megváltoztatása<div></li><ul>');
 		}
+		
+		function valtEmailMegvaltoztatas()
+		{
+			$("#szoveg").html('<form><div><div>Régi email-cím:</div><div><input id = "regiEmailText" class = "valtInput" type = "password"></div><div>Új email-cím:</div><div><input id = "ujEmailText" class = "valtInput" type = "password"></div><div>Jelszó:</div><div><input id = "jelszoText" class = "valtInput" type = "password"></div></div><span><input id="gombMehet" type="submit" class="btn btn-sm btn-primary" value="Mehet" disabled="disabled"></span>');
+		}
+		
+		function valtJelszoMegvaltoztatas()
+		{
+			$("#szoveg").html('<form><div><div>Régi Jelszó:</div><div><input id = "regiJelszoText" class = "valtInput" type = "password"></div><div>Új jelszó:</div><div><input id = "ujJelszoText" class = "valtInput" type = "password"></div><div>Jelszó ismét:</div><div><input id = "jelszoIsmText" class = "valtInput" type = "password"></div></div><div><input id="gombMehet" type="submit" class="btn btn-sm btn-primary" value="Mehet" disabled="disabled"></div>');
+		}
+            
+            function ujJelszoEllenorzes()
+            {
+                if($('#ujJelszoText').val().length < 4)
+                {
+                    document.getElementById('hibaJelszo').innerHTML = "A jelszó nem megfelelő hosszúságú!";
+                    return false;
+                }
+                else
+                {
+                    document.getElementById('hibaJelszo').innerHTML = "";
+                    return true;
+                }
+            }            
+            
+            
+            function ellenorzes()
+            {
+                if(jelszoEllenorzes())
+                {
+                    $('#gombMehet').prop('disabled', false);
+                }
+                else
+                {
+                    $('#gombMehet').prop('disabled', true);
+                }
+            }
 		
 		function valtGaleriaNezetre()
 		{
