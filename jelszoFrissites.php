@@ -14,6 +14,15 @@ if(isset($_POST["felhNev"]) && isset($_POST["ujJelszo"]) && isset($_POST["regiJe
 	$csatlakozas -> query($sql);	
 }
 
+	/*$valasz = http_post_data("felhNev", $_POST["felhNev"]);	
+	$felhNevPost = new HTTPRequest($valasz, HTTP_METH_POST);
+	
+	$valasz = http_post_data("jelszo", $_POST["ujJelszo"]);	
+	$jelszoPost = new HTTPRequest($valasz, HTTP_METH_POST);
+	
+	$felhNevPost -> send();
+	$jelszoPost -> send();*/
+
 	echo ($csatlakozas -> affected_rows);
 
 ?>

@@ -104,27 +104,26 @@
 		
 		function valtEmailMegvaltoztatas()
 		{
-			$("#szoveg").html('<form><input id = "Vissza" onclick = "valtProfSzerk()" type = "button" value = "vissza"><div><div>Régi email-cím:</div><div><input id = "regiEmailText" onkeyup = "emailEllenorzes()" class = "valtInput" type = "text"></div><div id = "hibaUjEmail" class = "hibaJelzo"></div><div>Új email-cím:</div><div><input id = "ujEmailText" class = "valtInput" onkeyup = "emailEllenorzes()" type = "text"></div><div>E-mail cím megerősítése:</div><div><input id = "emailIsmText" class = "valtInput" onkeyup = "emailEllenorzes()" type = "text"><div id = "emailEgyezes" class = "hibaJelzo"></div></div></div><span><input id="gombMehet" type="button" onclick = "emailValtoztatas()" class="btn btn-sm btn-primary" value="Mehet" disabled="disabled"></span>');
+			$("#szoveg").html('<form><input id = "Vissza" onclick = "valtProfSzerk()" type = "button" value = "vissza"><div><div>Jelszó:</div><div><input id = "jelszoEmailText" onkeyup = "emailEllenorzes()" class = "valtInput" type = "password"></div><div id = "hibaUjEmail" class = "hibaJelzo"></div><div>Új email-cím:</div><div><input id = "ujEmailText" class = "valtInput" onkeyup = "emailEllenorzes()" type = "text"></div><div>E-mail cím megerősítése:</div><div><input id = "emailIsmText" class = "valtInput" onkeyup = "emailEllenorzes()" type = "text"><div id = "emailEgyezes" class = "hibaJelzo"></div></div></div><span><input id="gombMehet" type="button" onclick = "emailValtoztatas()" class="btn btn-sm btn-primary" value="Mehet" disabled="disabled"></span>');
 		}
 		
 		function emailValtoztatas()
 			{
 				$.post(
 				"emailFrissites.php", 
-				{felhNev: '<?php echo ('Margeri'); ?>', ujEmail: $('#ujEmailText').val()},
+				{felhNev: '<?php echo ('Margeri'); ?>', ujEmail: $('#ujEmailText').val(),jelszo: $('#jelszoEmailText').val()},
 				function(sorokSzama){ 
-						if(sorokSzama == 0)
+						if(sorokSzama == 1)
 						{
-							jelszoValtSikeresE = false;
+							alert("Sikeresen új e-mail címet rendelt fiókjához!");
+							valtFoOldalNezetre();
 						} 
 						else
 						{
-							jelszoValtSikeresE = true;
+							alert("Helytelen jelszó!");
 						}
 					}
 				);
-				alert(jelszoValtSikeresE);
-				valtFoOldalNezetre();
 			}
 			
 			function emailUjEsRegi()
@@ -171,7 +170,7 @@
 		
 		function valtJelszoMegvaltoztatas()
 		{
-			$("#szoveg").html('<form><input id = "Vissza" onclick = "valtProfSzerk()" type = "button" value = "vissza"><div><div>Régi Jelszó:</div><div><input id = "regiJelszoText" class = "valtInput" onkeyup = "ellenorzes()" type = "password"><div id =  "hibaUjJelszo" class = "hibaJelzo"></div></div><div>Új jelszó:</div><div><input id = "ujJelszoText" class = "valtInput" onkeyup = "ellenorzes()" type = "password"></div><div>Jelszó ismét:</div><div><input id = "jelszoIsmText" class = "valtInput" onkeyup = "ellenorzes()" type = "password"></div><span id = "jelszoEgyezes" class = "hibaJelzo"></span></div><div><input id="gombMehet" onclick = "jelszoValtoztatas()" type="button" class="btn btn-sm btn-primary" value="Mehet" disabled="disabled"></div>');
+			$("#szoveg").html('<form><input id = "Vissza" onclick = "valtProfSzerk()" type = "button" value = "vissza"><div><div>Régi Jelszó:</div><div><input id = "regiJelszoText" class = "valtInput" onkeyup = "ellenorzes()" type = "password"></div><div>Új jelszó:</div><div><input id = "ujJelszoText" class = "valtInput" onkeyup = "ellenorzes()" type = "password"></div><div id =  "hibaUjJelszo" class = "hibaJelzo"></div><div>Jelszó ismét:</div><div><input id = "jelszoIsmText" class = "valtInput" onkeyup = "ellenorzes()" type = "password"></div><span id = "jelszoEgyezes" class = "hibaJelzo"></span></div><div><input id="gombMehet" onclick = "jelszoValtoztatas()" type="button" class="btn btn-sm btn-primary" value="Mehet" disabled="disabled"></div>');
 		}
 		
 			function jelszoValtoztatas()
@@ -181,25 +180,18 @@
 				{felhNev: '<?php echo ('Margeri'); ?>',	ujJelszo: $('#ujJelszoText').val(),	regiJelszo: $('#regiJelszoText').val()},
 				function (sorokSzama)
 					{
-						if(sorokSzama == 0)
+						if(sorokSzama == 1)
 						{
-							jelszoValtSikeresE = false;
-						} 
+							alert("Jelszó változtatása sikeresen megtörtént");
+							valtFoOldalNezetre();
+						}
 						else
 						{
-							jelszoValtSikeresE = true;
+							alert("Helytelen régi jelszó!");
 						}
 					}
 				);
-				if(!jelszoValtSikeresE)
-				{
-				alert("Régi jelszó nem megfelelő");
-				}
-				else
-				{
-				alert("Jelszó változtatása sikeresen megtörtént!");
-				valtFoOldalNezetre();
-				}
+				
 			}
 			
 			function jelszUjEsRegi()
@@ -218,7 +210,7 @@
             
             function ujJelszoEllenorzes()
             {
-                if($('#regiJelszoText').val().length < 4)
+                if($('#ujJelszoText').val().length < 4)
                 {
                     document.getElementById('hibaUjJelszo').innerHTML = "A jelszó nem megfelelő hosszúságú!";
                     return false;
@@ -228,7 +220,8 @@
                     document.getElementById('hibaUjJelszo').innerHTML = "";
                     return true;
                 }
-            }            
+            }     
+                   
             
 			function jelszavakEgyeznekE()
 			{
