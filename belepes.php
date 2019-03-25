@@ -111,7 +111,7 @@
 			{
 				$.post(
 				"emailFrissites.php", 
-				{felhNev: '<?php echo ('Margeri'); ?>', ujEmail: $('#ujEmailText').val(),jelszo: $('#jelszoEmailText').val()},
+				{felhNev: '<?php echo $_SESSION["bejelNev"]; ?>', ujEmail: $('#ujEmailText').val(),jelszo: $('#jelszoEmailText').val()},
 				function(sorokSzama){ 
 						if(sorokSzama == 1)
 						{
@@ -120,7 +120,7 @@
 						} 
 						else
 						{
-							alert("Helytelen jelszó!");
+							alert("Helytelen jelszó, vagy az e-mail cím a korábbival megegyezik!");
 						}
 					}
 				);
@@ -154,9 +154,25 @@
 				}
 			}
             
+            function emailFormulaHelyesE()
+            {			
+				let ervenyesEmailEllenorzo = /^([a-z\d!#$%&'*+\-\/=?^_`{|}~\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]+(\.[a-z\d!#$%&'*+\-\/=?^_`{|}~\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]+)*|"((([ \t]*\r\n)?[ \t]+)?([\x01-\x08\x0b\x0c\x0e-\x1f\x7f\x21\x23-\x5b\x5d-\x7e\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]|\\[\x01-\x09\x0b\x0c\x0d-\x7f\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]))*(([ \t]*\r\n)?[ \t]+)?")@(([a-z\d\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]|[a-z\d\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF][a-z\d\-._~\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]*[a-z\d\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])\.)+([a-z\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]|[a-z\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF][a-z\d\-._~\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]*[a-z\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])\.?$/i;
+   
+                if(!ervenyesEmailEllenorzo.test($('#ujEmailText').val()))
+					{
+						document.getElementById('emailEgyezes').innerHTML = "Érvénytelen e-mail cím!";
+						return false;
+					}
+					else
+					{
+						document.getElementById('emailEgyezes').innerHTML = "";
+						return true;
+					}
+            }
+            
             function emailEllenorzes()
             {
-                if(emailekEgyeznekE() && emailUjEsRegi())
+                if(emailFormulaHelyesE() && emailekEgyeznekE() && emailUjEsRegi())
                 {
                     $('#gombMehet').prop('disabled', false);
                 }
@@ -177,7 +193,7 @@
 			{
 				$.post(
 				"jelszoFrissites.php",
-				{felhNev: '<?php echo ('Margeri'); ?>',	ujJelszo: $('#ujJelszoText').val(),	regiJelszo: $('#regiJelszoText').val()},
+				{felhNev: '<?php $_SESSION["bejelNev"]; ?>', ujJelszo: $('#ujJelszoText').val(),	regiJelszo: $('#regiJelszoText').val()},
 				function (sorokSzama)
 					{
 						if(sorokSzama == 1)
