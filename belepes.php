@@ -162,7 +162,8 @@
 		
 			function jelszoValtoztatas()
 			{
-				$.post("jelszoFrissites.php", {felhNev: '<?php echo ('Margeri'); ?>', ujJelszo: $('#ujJelszoText').val()});
+				$.post("jelszoFrissites.php", {felhNev: '<?php echo ('Margeri'); ?>', ujJelszo: $('#ujJelszoText').val(), 
+				regiJelszo: $('#regiJelszoText').val()});
 				alert("Jelszava sikeresen megváltozott!");
 				valtFoOldalNezetre();
 			}
