@@ -73,6 +73,7 @@
 	<script>		
 		
 		var belepesOldal = "index.php";
+		var jelszoValtSikeresE = false;
 	
 		$(document).ready(function()
 		{
@@ -108,8 +109,21 @@
 		
 		function emailValtoztatas()
 			{
-				$.post("emailFrissites.php", {felhNev: '<?php echo ('Margeri'); ?>', ujEmail: $('#ujEmailText').val()});
-				alert("E-mail címe sikeresen megváltozott!");
+				$.post(
+				"emailFrissites.php", 
+				{felhNev: '<?php echo ('Margeri'); ?>', ujEmail: $('#ujEmailText').val()},
+				function(sorokSzama){ 
+						if(sorokSzama == 0)
+						{
+							jelszoValtSikeresE = false;
+						} 
+						else
+						{
+							jelszoValtSikeresE = true;
+						}
+					}
+				);
+				alert(jelszoValtSikeresE);
 				valtFoOldalNezetre();
 			}
 			
@@ -162,9 +176,22 @@
 		
 			function jelszoValtoztatas()
 			{
-				$.post("jelszoFrissites.php", {felhNev: '<?php echo ('Margeri'); ?>', ujJelszo: $('#ujJelszoText').val(), 
-				regiJelszo: $('#regiJelszoText').val()});
-				alert("Jelszava sikeresen megváltozott!");
+				$.post(
+				"jelszoFrissites.php",
+				{felhNev: '<?php echo ('Margeri'); ?>',	ujJelszo: $('#ujJelszoText').val(),	regiJelszo: $('#regiJelszoText').val()},
+				function (sorokSzama)
+					{
+						if(sorokSzama == 0)
+						{
+							jelszoValtSikeresE = false;
+						} 
+						else
+						{
+							jelszoValtSikeresE = true;
+						}
+					}
+				);
+				alert(jelszoValtSikeresE);
 				valtFoOldalNezetre();
 			}
 			
