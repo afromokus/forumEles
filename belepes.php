@@ -191,8 +191,15 @@
 						}
 					}
 				);
-				alert(jelszoValtSikeresE);
+				if(!jelszoValtSikeresE)
+				{
+				alert("Régi jelszó nem megfelelő");
+				}
+				else
+				{
+				alert("Jelszó változtatása sikeresen megtörtént!");
 				valtFoOldalNezetre();
+				}
 			}
 			
 			function jelszUjEsRegi()
