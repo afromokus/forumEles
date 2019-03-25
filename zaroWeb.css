@@ -232,6 +232,19 @@ td
 	text-decoration: underline;
 }
 
+#vissza
+{
+	margin-left: 20%;
+}
+
+.hibaJelzo
+{
+	color: red;
+	font-weight: bold;
+	font-style: italic;
+	font-size: 45%;
+}
+
 @media (max-width: 1000px)
 {
 }
