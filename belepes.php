@@ -104,7 +104,7 @@
 		
 		function valtEmailMegvaltoztatas()
 		{
-			$("#szoveg").html('<form><input id = "Vissza" onclick = "valtProfSzerk()" type = "button" value = "vissza"><div><div>Jelszó:</div><div><input id = "jelszoEmailText" onkeyup = "emailEllenorzes()" class = "valtInput" type = "password"></div><div id = "hibaUjEmail" class = "hibaJelzo"></div><div>Új email-cím:</div><div><input id = "ujEmailText" class = "valtInput" onkeyup = "emailEllenorzes()" type = "text"></div><div>E-mail cím megerősítése:</div><div><input id = "emailIsmText" class = "valtInput" onkeyup = "emailEllenorzes()" type = "text"><div id = "emailEgyezes" class = "hibaJelzo"></div></div></div><span><input id="gombMehet" type="button" onclick = "emailValtoztatas()" class="btn btn-sm btn-primary" value="Mehet" disabled="disabled"></span>');
+			$("#szoveg").html('<form><input id = "Vissza" onclick = "valtProfSzerk()" type = "button" value = "vissza"><div><div>Jelszó:</div><div><input id = "jelszoEmailText" onkeyup = "emailEllenorzes()" class = "valtInput" type = "password"></div><div id = "hibaUjEmail" class = "hibaJelzo"></div><div>Új e-mail cím:</div><div><input id = "ujEmailText" class = "valtInput" onkeyup = "emailEllenorzes()" type = "text"></div><div>E-mail cím megerősítése:</div><div><input id = "emailIsmText" class = "valtInput" onkeyup = "emailEllenorzes()" type = "text"><div id = "emailEgyezes" class = "hibaJelzo"></div></div></div><span><input id="gombMehet" type="button" onclick = "emailValtoztatas()" class="btn btn-sm btn-primary" value="Mehet" disabled="disabled"></span>');
 		}
 		
 		function emailValtoztatas()
