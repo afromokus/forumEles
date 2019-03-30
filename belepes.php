@@ -24,7 +24,7 @@
 											{
 											if($felhasznaloAdatokEgySora["felhNev"] == $_POST["felhNev"] && $felhasznaloAdatokEgySora["jelszo"] == $_POST["jelszo"])
 												{
-												echo '<tr><td colspan = "3" id = "felhKomm" class = "folsoElem noBorderRight">Üdvözöljük '.$felhasznaloAdatokEgySora["felhNev"].'!</td><td class = "noBorderLeft"><button id = "profSzerk" class = "menuGomb" onclick = "valtProfSzerk()">Profil szekresztése</button></td></tr>';
+												echo '<tr><td colspan = "3" id = "felhKomm" class = "folsoElem noBorderRight">Üdvözöljük '.$felhasznaloAdatokEgySora["felhNev"].'!</td><td class = "noBorderLeft"><button id = "profSzerk" class = "menuGomb" onclick = "valtProfSzerk()">Profil szerkesztése</button></td></tr>';
 												$sikeresBelepes = true;
 												$bejelentkezettNev = $felhasznaloAdatokEgySora["felhNev"];
 												$_SESSION["bejelNev"] = $bejelentkezettNev;
