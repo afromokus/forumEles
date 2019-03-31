@@ -3,11 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Gép: 127.0.0.1
--- Létrehozás ideje: 2019. Már 05. 16:07
--- Kiszolgáló verziója: 10.1.35-MariaDB
--- PHP verzió: 7.2.9
-
-CREATE DATABASE lab3d;
+-- Létrehozás ideje: 2019. Már 31. 01:17
+-- Kiszolgáló verziója: 10.1.37-MariaDB
+-- PHP verzió: 7.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -25,13 +23,14 @@ SET time_zone = "+00:00";
 --
 
 -- --------------------------------------------------------
+CREATE DATABASE lab3d CHARACTER SET utf8 COLLATE utf8_hungarian_ci;
 
 --
 -- Tábla szerkezet ehhez a táblához `accountok`
 --
 
 CREATE TABLE `accountok` (
-  `felhNev` varchar(30) COLLATE utf8_hungarian_ci DEFAULT NULL,
+  `felhNev` varchar(30) COLLATE utf8_hungarian_ci NOT NULL,
   `jelszo` varchar(28) COLLATE utf8_hungarian_ci DEFAULT NULL,
   `email_cim` varchar(50) COLLATE utf8_hungarian_ci DEFAULT NULL,
   `jog` varchar(20) COLLATE utf8_hungarian_ci DEFAULT NULL,
@@ -44,9 +43,9 @@ CREATE TABLE `accountok` (
 --
 
 INSERT INTO `accountok` (`felhNev`, `jelszo`, `email_cim`, `jog`, `szint`, `regio_az`) VALUES
-('user', 'user', 'username@gmail.com', 'felhasználó', 1, 3),
 ('gycsaba', 'gycsaba', 'gyuris.csaba@vasvari.hu', 'felhasználó', 1, 3),
-('ujFelhNev', 'ujJelszo', 'ujEmail', 'jog', 1, 3);
+('baro', 'baro123', 'balint.robert@vasvari.hu', 'felhasználó', 1, 3),
+('user', 'user', 'username@gmail.com', 'felhasználó', 1, 3);
 
 -- --------------------------------------------------------
 
@@ -106,8 +105,12 @@ CREATE TABLE `szerverek` (
 -- Indexek a kiírt táblákhoz
 --
 
+--
+-- A tábla indexei `accountok`
+--
 ALTER TABLE `accountok`
   ADD PRIMARY KEY (`felhNev`);
+
 --
 -- A tábla indexei `helyszin`
 --
