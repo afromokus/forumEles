@@ -1,5 +1,5 @@
 <?php
-    $csatlakozas = new mysqli('127.0.0.1', 'root', '', 'Lab3d', '3306');
+    $csatlakozas = new mysqli('10.0.128.111', 'zarodolgozat', 'zarodolgozat', 'zarodolgozat_2018kirjan', '3306');
     
     if($csatlakozas -> errno)
         {
